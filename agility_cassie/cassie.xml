@@ -131,8 +131,8 @@
                     </body>
                   </body>
                   <body name="left-foot" pos="0.408 -0.04 0">
-                    <site name="lfoot1" size="0.01" pos="+0.03155 +0 -0.07996"/>
-                    <site name="lfoot2" size="0.01" pos="-0.03155 -0 -0.07996"/>
+                    <site name="lfoot1" size="0.01" pos="+0.08 +0.0 +0.0"/>
+                    <site name="lfoot2" size="0.01" pos="-0.04 +0.1 +0.0"/>
                     <inertial pos="0.00474 0.02748 -0.00014" mass="0.1498"
                       fullinertia="0.00017388 0.00016793 0.00033261 0.00011814 1.36e-06 -4e-07"/>
                     <joint name="left-foot" type="hinge" range="-140 -30" damping="1" armature="0.01225"/>
@@ -211,8 +211,8 @@
                     </body>
                   </body>
                   <body name="right-foot" pos="0.408 -0.04 0">
-                    <site name="rfoot1" size="0.01" pos="+0.03155 +0 -0.07996"/>
-                    <site name="rfoot2" size="0.01" pos="-0.03155 -0 -0.07996"/>
+                    <site name="rfoot1" size="0.01" pos="+0.08 +0.0 +0.0"/>
+                    <site name="rfoot2" size="0.01" pos="-0.04 +0.1 +0.0"/>
                     <inertial pos="0.00474 0.02748 0.00014" mass="0.1498"
                       fullinertia="0.00017388 0.00016793 0.00033261 0.00011814 -1.36e-06 4e-07"/>
                     <joint name="right-foot" type="hinge" range="-140 -30" damping="1" armature="0.01225"/>
