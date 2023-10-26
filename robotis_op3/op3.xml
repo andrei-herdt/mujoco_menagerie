@@ -58,7 +58,7 @@
     <mesh scale="0.001 0.001 0.001"/>
     <geom type="mesh" solref=".004 1"/>
     <joint damping="1.084" armature="0.045" frictionloss="0.03"/>
-    <!-- <site group="5" type="sphere"/> -->
+    <site group="5" type="sphere"/>
     <!-- <position kp="21.1" ctrlrange="-3.141592 3.141592" forcerange="-5 5"/> -->
     <default class="collision">
       <geom group="3"/>
