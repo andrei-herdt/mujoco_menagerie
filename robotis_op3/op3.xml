@@ -58,8 +58,8 @@
     <mesh scale="0.001 0.001 0.001"/>
     <geom type="mesh" solref=".004 1"/>
     <joint damping="1.084" armature="0.045" frictionloss="0.03"/>
-    <site group="5" type="sphere"/>
-    <position kp="21.1" ctrlrange="-3.141592 3.141592" forcerange="-5 5"/>
+    <!-- <site group="5" type="sphere"/> -->
+    <!-- <position kp="21.1" ctrlrange="-3.141592 3.141592" forcerange="-5 5"/> -->
     <default class="collision">
       <geom group="3"/>
       <default class="foot">
@@ -181,6 +181,10 @@
                   <!-- <geom mesh="ll6c" class="collision" /> -->
                   <geom class="foot" pos="0.024 0.013 -0.0265" size="0.0635 0.028 0.004"/>
                   <geom class="foot" pos="0.024 0.0125 -0.0265" size="0.057 0.039 0.004"/>
+                  <site name="lfoot1" size="0.01" pos="-0.0335 +0.05 -0.0265"/>
+                  <site name="lfoot2" size="0.01" pos="-0.0335 -0.02 -0.0265"/>
+                  <site name="lfoot3" size="0.01" pos="+0.0835 +0.05 -0.0265"/>
+                  <site name="lfoot4" size="0.01" pos="+0.0835 -0.02 -0.0265"/>
                 </body>
               </body>
             </body>
@@ -217,6 +221,10 @@
                 <geom mesh="rl5" class="visual"/>
                 <geom mesh="rl5c" class="collision"/>
                 <body name="r_ank_roll_link" pos="-0.0241 0.019 0">
+                  <site name="rfoot1" size="0.01" pos="-0.0335 +0.02 -0.0265"/>
+                  <site name="rfoot2" size="0.01" pos="-0.0335 -0.05 -0.0265"/>
+                  <site name="rfoot3" size="0.01" pos="+0.0835 +0.02 -0.0265"/>
+                  <site name="rfoot4" size="0.01" pos="+0.0835 -0.05 -0.0265"/>
                   <inertial pos="0.02373 -0.01037 -0.0276" quat="-0.0078515 0.707601 -0.0113965 0.706477" mass="0.06934"
                     diaginertia="0.000115818 7.87135e-05 4.03389e-05"/>
                   <joint name="r_ank_roll" axis="1 0 0"/>
@@ -239,26 +247,33 @@
   </contact>
 
   <actuator>
-    <position name="head_pan_act" joint="head_pan"/>
-    <position name="head_tilt_act" joint="head_tilt"/>
-    <position name="l_sho_pitch_act" joint="l_sho_pitch"/>
-    <position name="l_sho_roll_act" joint="l_sho_roll"/>
-    <position name="l_el_act" joint="l_el"/>
-    <position name="r_sho_pitch_act" joint="r_sho_pitch"/>
-    <position name="r_sho_roll_act" joint="r_sho_roll"/>
-    <position name="r_el_act" joint="r_el"/>
-    <position name="l_hip_yaw_act" joint="l_hip_yaw"/>
-    <position name="l_hip_roll_act" joint="l_hip_roll"/>
-    <position name="l_hip_pitch_act" joint="l_hip_pitch"/>
-    <position name="l_knee_act" joint="l_knee"/>
-    <position name="l_ank_pitch_act" joint="l_ank_pitch"/>
-    <position name="l_ank_roll_act" joint="l_ank_roll"/>
-    <position name="r_hip_yaw_act" joint="r_hip_yaw"/>
-    <position name="r_hip_roll_act" joint="r_hip_roll"/>
-    <position name="r_hip_pitch_act" joint="r_hip_pitch"/>
-    <position name="r_knee_act" joint="r_knee"/>
-    <position name="r_ank_pitch_act" joint="r_ank_pitch"/>
-    <position name="r_ank_roll_act" joint="r_ank_roll"/>
+    <motor name="head_pan_act" joint="head_pan"/>
+    <motor name="head_tilt_act" joint="head_tilt"/>
+    <motor name="l_sho_pitch_act" joint="l_sho_pitch"/>
+    <motor name="l_sho_roll_act" joint="l_sho_roll"/>
+    <motor name="l_el_act" joint="l_el"/>
+    <motor name="r_sho_pitch_act" joint="r_sho_pitch"/>
+    <motor name="r_sho_roll_act" joint="r_sho_roll"/>
+    <motor name="r_el_act" joint="r_el"/>
+    <motor name="l_hip_yaw_act" joint="l_hip_yaw"/>
+    <motor name="l_hip_roll_act" joint="l_hip_roll"/>
+    <motor name="l_hip_pitch_act" joint="l_hip_pitch"/>
+    <motor name="l_knee_act" joint="l_knee"/>
+    <motor name="l_ank_pitch_act" joint="l_ank_pitch"/>
+    <motor name="l_ank_roll_act" joint="l_ank_roll"/>
+    <motor name="r_hip_yaw_act" joint="r_hip_yaw"/>
+    <motor name="r_hip_roll_act" joint="r_hip_roll"/>
+    <motor name="r_hip_pitch_act" joint="r_hip_pitch"/>
+    <motor name="r_knee_act" joint="r_knee"/>
+    <motor name="r_ank_pitch_act" joint="r_ank_pitch"/>
+    <motor name="r_ank_roll_act" joint="r_ank_roll"/>
   </actuator>
+
+  <keyframe>
+    <key name="home"
+      qpos="-0.004 0. 0.25 1. -0. -0.031 0. 0. -0. 0. 0.007 -0.001 -0. -0.007 0.001 -0. 0. -0.491 1.042 0.49 0. 0. -0. 0.491 -1.042 -0.49 -0."/>
+  </keyframe>
+
+
 
 </mujoco>
