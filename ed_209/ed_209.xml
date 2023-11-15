@@ -1,0 +1,51 @@
+<mujoco model="ed_209">
+  <default class="lift">
+    <joint type="slide" axis="0 0 1" damping="5" range="-0.5 .6"/>
+    <general ctrlrange="-0.5 .6" gainprm="300" biasprm="0 -300 -50" forcerange="-56 56"/>
+  </default>
+  <worldbody>
+    <!-- Torso -->
+    <body name="torso" pos="0 0 1">
+      <freejoint/>
+      <geom type="box" size="0.5 0.5 0.5" rgba="0.8 0.6 0.4 1"/>
+        <!-- Leg -->
+      <body name="rleg" pos="0 -0.6 -0.5">
+        <joint name="rleg_slide" type="slide" axis="0 0 1" pos="0 0 0"/>
+        <geom type="cylinder" size="0.1 1" rgba="0.8 0.6 0.4 1"/>
+        <!-- Slide joint connecting torso to leg -->
+        <!-- Foot -->
+        <body name="rankle" pos="0 0 -1">
+          <geom type="box" size="0.05 0.05 0.05"/>
+          <body name="rfoot" pos="0 0 -0.1">
+            <joint name="rpitch" type="hinge" axis="1 0 0" pos="0 0 0"/>
+            <joint name="rroll" type="hinge" axis="0 1 0" pos="0 0 0"/>
+            <geom type="box" size="0.2 0.1 0.05" rgba="0.8 0.6 0.4 1"/>
+          </body>
+        </body>
+      </body>
+      <body name="lleg" pos="0 +0.6 -0.5">
+        <joint name="lleg_slide" type="slide" axis="0 0 1" pos="0 0 0"/>
+        <geom type="cylinder" size="0.1 1" rgba="0.8 0.6 0.4 1"/>
+        <!-- Slide joint connecting torso to leg -->
+        <!-- Foot -->
+        <body name="lankle" pos="0 0 -1">
+          <geom type="box" size="0.05 0.05 0.05"/>
+          <body name="foot" pos="0 0 -0.1">
+            <joint name="lpitch" type="hinge" axis="1 0 0" pos="0 0 0"/>
+            <joint name="lroll" type="hinge" axis="0 1 0" pos="0 0 0"/>
+            <geom type="box" size="0.2 0.1 0.05" rgba="0.8 0.6 0.4 1"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+      <!-- Actuators for the joints -->
+      <motor name="rmotor_pitch" joint="rpitch" gear="100"/>
+      <motor name="rmotor_roll" joint="rroll" gear="100"/>
+      <motor name="lmotor_pitch" joint="lpitch" gear="100"/>
+      <motor name="lmotor_roll" joint="lroll" gear="100"/>
+      <motor name="rmotor_slide" joint="rleg_slide" gear="100"/>
+      <motor name="lmotor_slide" joint="lleg_slide" gear="100"/>
+  </actuator>
+</mujoco>
